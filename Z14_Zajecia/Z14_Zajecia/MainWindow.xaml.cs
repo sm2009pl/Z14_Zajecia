@@ -23,6 +23,7 @@ namespace Z14_Zajecia
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainWindowVM();
         }
     }
 }

@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Zarejestruj się:" HorizontalAlignment="Center" Margin="0,60,0,0" VerticalAlignment="Top"></Label>
+        <TextBox Text="{Binding Registration.Email, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Height="20" TextWrapping="Wrap" Width="150" Margin="0,100,0,290"></TextBox>
+        <TextBox Text="{Binding Registration.Password, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" TextWrapping="Wrap" Height="20" Width="150" Margin="0,140,0,250"></TextBox>
+        <CheckBox IsChecked="{Binding Registration.Accept}" Content="Wyrażam zgodę na regulamin" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,180,0,0"></CheckBox>
+        <Label Content="Email" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,200,0"></Label>
+        <Label Content="Hasło" Margin="0,140,200,0" HorizontalAlignment="Center" VerticalAlignment="Top"></Label>
+        <Button Command="{Binding RegisterCommand}" CommandParameter="{Binding Registration}" Content="Zarejestruj" HorizontalAlignment="Center" Margin="0,200,0,0" VerticalAlignment="Top" Width="75" />
+        <TextBox Text="{Binding Registration.Errors}" HorizontalAlignment="Center" Height="150" Margin="0,240,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="150"/>
     </Grid>
 </Window>
