@@ -1,31 +1,33 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FluentValidation;
 
-namespace Z14_Zajecia
+namespace Z14_Valid
 {
-    public class RegModelValid : AbstractValidator<RegistrationModel>
+    public class RegistrationModelValidation : AbstractValidator<RegistrationModel>
     {
-        public RegModelValid()
+        public RegistrationModelValidation()
         {
             this.CascadeMode = CascadeMode.StopOnFirstFailure;
+
             RuleFor(x => x.Email)
                 .NotNull()
                 .NotEmpty()
                 .EmailAddress();
+
             RuleFor(x => x.Password)
                 .NotNull()
                 .NotEmpty()
-                .MinimumLength(6)
-                .Must(r => !(r == r.ToLower() || r == r.ToUpper()))
-                .Matches(@"(.*[!@#$%^&*\-].*)+"); //http://regex101.com/
+                .MinimumLength(8)
+                .Must(y => !(y == y.ToLower() || y == y.ToUpper()))
+                .Matches(@"(?=.*[$@!#%^&*:;,./?\|])(?=.*[0-9])");
+
             RuleFor(x => x.Accept)
                 .Must(x => x)
-                .WithMessage("Wyraź zgodę na regulamin!!!");
-
+                .WithMessage("Należy zaakceptować regulamin.");
         }
     }
 }

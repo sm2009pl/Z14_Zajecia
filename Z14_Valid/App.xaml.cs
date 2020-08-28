@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Z14_Zajecia
+namespace Z14_Valid
 {
     /// <summary>
     /// Interaction logic for App.xaml

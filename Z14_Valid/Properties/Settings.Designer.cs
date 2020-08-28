@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Z14_Zajecia.Properties
+namespace Z14_Valid.Properties
 {
 
 

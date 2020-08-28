@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Z14_Zajecia
+namespace Z14_Valid
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,7 @@ namespace Z14_Zajecia
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new MainWindowVM();
+            DataContext = new WindowViewModel();
         }
     }
 }

@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Z14_Zajecia
+namespace Z14_Valid
 {
     public class RegistrationModel : INotifyPropertyChanged
     {
-        private string email;
-        private bool accept;
-        private string password;
-        private string errors;
         public event PropertyChangedEventHandler PropertyChanged;
+        public string email { get; set; }
+        public string password { get; set; }
+        public bool accept { get; set; }
+        private string errors;
         public string Email
         {
             get { return email; }
@@ -46,7 +46,7 @@ namespace Z14_Zajecia
                 if (accept != value)
                 {
                     accept = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Accept"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Password"));
                 }
             }
         }
@@ -57,10 +57,9 @@ namespace Z14_Zajecia
             {
                 if (errors != value)
                 {
-
+                    errors = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Errors"));
                 }
-                errors = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Errors"));
             }
         }
     }

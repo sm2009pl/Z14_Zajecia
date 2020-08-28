@@ -5,16 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Z14_Zajecia
+namespace Z14_Valid
 {
-    public class MainWindowVM
+    public class WindowViewModel
     {
-        public MainWindowVM()
+        public RegistrationModel Registration { get; set; }
+        public ICommand RegisterCommand { get; set; }
+        public WindowViewModel()
         {
             Registration = new RegistrationModel();
             RegisterCommand = new RegisterCommand();
         }
-        public RegistrationModel Registration { get; set; }
-        public ICommand RegisterCommand { get; set; }
     }
 }
