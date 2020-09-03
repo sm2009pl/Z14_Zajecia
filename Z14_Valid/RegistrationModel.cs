@@ -46,7 +46,7 @@ namespace Z14_Valid
                 if (accept != value)
                 {
                     accept = value;
-                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Password"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Accept"));
                 }
             }
         }
